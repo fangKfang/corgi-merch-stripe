@@ -1,0 +1,153 @@
+werkzeug - INFO -  * Running on http://0.0.0.0:4242/ (Press CTRL+C to quit)
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:08] "OPTIONS /public-key HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:08] "GET /public-key HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:08] "OPTIONS /products HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:08] "GET /products HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:09] "OPTIONS /create-payment-intent HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:09] "POST /create-payment-intent HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:10] "POST /webhook HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:34] "OPTIONS /purchases HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:34] "POST /purchases HTTP/1.1" 200 -
+__main__ - ERROR - {
+  "amount": 1000,
+  "amount_capturable": 0,
+  "amount_received": 1000,
+  "application": null,
+  "application_fee_amount": null,
+  "canceled_at": null,
+  "cancellation_reason": null,
+  "capture_method": "automatic",
+  "charges": {
+    "data": [
+      {
+        "amount": 1000,
+        "amount_refunded": 0,
+        "application": null,
+        "application_fee": null,
+        "application_fee_amount": null,
+        "balance_transaction": "txn_1GylhNCdq7lM8xji5zcdbRt6",
+        "billing_details": {
+          "address": {
+            "city": null,
+            "country": null,
+            "line1": null,
+            "line2": null,
+            "postal_code": "45678",
+            "state": null
+          },
+          "email": null,
+          "name": "Kelly",
+          "phone": null
+        },
+        "calculated_statement_descriptor": "Stripe",
+        "captured": true,
+        "created": 1593293793,
+        "currency": "usd",
+        "customer": null,
+        "description": null,
+        "destination": null,
+        "dispute": null,
+        "disputed": false,
+        "failure_code": null,
+        "failure_message": null,
+        "fraud_details": {},
+        "id": "ch_1GylhNCdq7lM8xjiyrhdDaJR",
+        "invoice": null,
+        "livemode": false,
+        "metadata": {},
+        "object": "charge",
+        "on_behalf_of": null,
+        "order": null,
+        "outcome": {
+          "network_status": "approved_by_network",
+          "reason": null,
+          "risk_level": "normal",
+          "risk_score": 19,
+          "seller_message": "Payment complete.",
+          "type": "authorized"
+        },
+        "paid": true,
+        "payment_intent": "pi_1GylgzCdq7lM8xjiH03gafJ3",
+        "payment_method": "pm_1GylhMCdq7lM8xji2tN7l32c",
+        "payment_method_details": {
+          "card": {
+            "brand": "visa",
+            "checks": {
+              "address_line1_check": null,
+              "address_postal_code_check": "pass",
+              "cvc_check": "pass"
+            },
+            "country": "US",
+            "exp_month": 12,
+            "exp_year": 2021,
+            "fingerprint": "7LQcQI8jaoraru4U",
+            "funding": "credit",
+            "installments": null,
+            "last4": "4242",
+            "network": "visa",
+            "three_d_secure": null,
+            "wallet": null
+          },
+          "type": "card"
+        },
+        "receipt_email": null,
+        "receipt_number": null,
+        "receipt_url": "https://pay.stripe.com/receipts/acct_1GyUzVCdq7lM8xji/ch_1GylhNCdq7lM8xjiyrhdDaJR/rcpt_HXrQLqQVceZxdrubiUEx75UL31o6s4b",
+        "refunded": false,
+        "refunds": {},
+        "review": null,
+        "shipping": null,
+        "source": null,
+        "source_transfer": null,
+        "statement_descriptor": null,
+        "statement_descriptor_suffix": null,
+        "status": "succeeded",
+        "transfer_data": null,
+        "transfer_group": null
+      }
+    ],
+    "has_more": false,
+    "object": "list",
+    "total_count": 1,
+    "url": "/v1/charges?payment_intent=pi_1GylgzCdq7lM8xjiH03gafJ3"
+  },
+  "client_secret": "pi_1GylgzCdq7lM8xjiH03gafJ3_secret_TMf1TcSzt1wd43MQdrYissn4k",
+  "confirmation_method": "automatic",
+  "created": 1593293769,
+  "currency": "usd",
+  "customer": null,
+  "description": null,
+  "id": "pi_1GylgzCdq7lM8xjiH03gafJ3",
+  "invoice": null,
+  "last_payment_error": null,
+  "livemode": false,
+  "metadata": {},
+  "next_action": null,
+  "object": "payment_intent",
+  "on_behalf_of": null,
+  "payment_method": "pm_1GylhMCdq7lM8xji2tN7l32c",
+  "payment_method_options": {
+    "card": {
+      "installments": null,
+      "network": null,
+      "request_three_d_secure": "automatic"
+    }
+  },
+  "payment_method_types": [
+    "card"
+  ],
+  "receipt_email": null,
+  "review": null,
+  "setup_future_usage": null,
+  "shipping": null,
+  "source": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null
+}
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:35] "POST /webhook HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:35] "POST /webhook HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:48:06] "POST /webhook HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:49:25] "POST /webhook HTTP/1.1" 200 -
