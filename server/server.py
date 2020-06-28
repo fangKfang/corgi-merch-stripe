@@ -88,16 +88,15 @@ def post_payment_intent():
     except Exception as e:
         return jsonify(error=str(e)), 403
 
-@app.route('/update-payment-intent', methods=['POST'])
-def update-payment-intent():
-    #When other product is selected, update existing payment intent 
+# @app.route('/update_payment_intent', methods=['POST'])
+# def update-payment-intent():
+#     #When other product is selected, update existing payment intent 
     
-    pass
 
-@app.route('/purchases', methods=['POST'])
-def store_purchase():
-    purchase_data = json.loads(request.data or '{}')
-    return jsonify({'something':''})
+# @app.route('/purchases', methods=['POST'])
+# def store_purchase():
+#     purchase_data = json.loads(request.data or '{}')
+#     return jsonify({'something':''})
 
 
 @app.route('/webhook', methods=['POST'])

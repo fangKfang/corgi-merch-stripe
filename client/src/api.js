@@ -77,7 +77,6 @@ const getProductDetails = options => {
 };
 
 
-
 const getPublicStripeKey = options => {
   return window
     .fetch(`${base_url}/public-key`, {
@@ -103,38 +102,38 @@ const getPublicStripeKey = options => {
     });
 };
 
-const postReceiptData = options => {
-  return window
-    .fetch(`${base_url}/purchases`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(options)
-    })
-    .then(res => {
-      if (res.status === 200) {
-        return res.json();
-      } else {
-        return null;
-      }
-    })
-    .then(data => {
-      if (!data || data.error) {
-        console.log("API error:", { data });
-        throw new Error("Failed to Send Payment Metadata");
-      } else {
-        return {};
-      }
-    });
-};
+// const postReceiptData = options => {
+//   return window
+//     .fetch(`${base_url}/purchases`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(options)
+//     })
+//     .then(res => {
+//       if (res.status === 200) {
+//         return res.json();
+//       } else {
+//         return null;
+//       }
+//     })
+//     .then(data => {
+//       if (!data || data.error) {
+//         console.log("API error:", { data });
+//         throw new Error("Failed to Send Payment Metadata");
+//       } else {
+//         return {};
+//       }
+//     });
+// };
 
 const api = {
   createPaymentIntent,
   getPublicStripeKey: getPublicStripeKey,
   getProductDetails: getProductDetails,
   getProducts: getProducts,
-  postReceiptData,
+  // postReceiptData,
 };
 
 export default api;
