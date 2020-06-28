@@ -1,7 +1,6 @@
 const base_url = "http://127.0.0.1:4242"
 
 const createPaymentIntent = options => {
-  console.log(options)
   return window
     .fetch(`${base_url}/create-payment-intent`, {
       method: "POST",

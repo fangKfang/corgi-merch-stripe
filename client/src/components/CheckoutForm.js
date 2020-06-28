@@ -44,9 +44,19 @@ const setSelection = (product) => {
 
 const renderProduct = () => {
     const productData = products.map((product) => {
-        return <button onClick={() => setSelection(product)}>
+        return <div>
+        <div className="buttons-content">
+            <img className="dogs"
+              alt="eclair-button-img"
+              src={product.img}
+              width="200"
+              height="200"
+            />
+          </div>
+        <button onClick={() => setSelection(product)}>
               <div key={product.name}> {product.name} {product.price / 100} {product.currency}</div>
               </button>
+          </div>
       });
     return productData
   }
@@ -75,27 +85,23 @@ const renderProduct = () => {
       setSucceeded(true);
       setProcessing(false);
       setMetadata(payload.paymentIntent);
-    
-    api
-      .postReceiptData(payload.paymentIntent)
-      .then((res) => {
-        console.log(res)
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
-      console.log("[PaymentIntent]", payload.paymentIntent);
+  // Sending client side response to server 
+    // api
+    //   .postReceiptData(payload.paymentIntent)
+    //   .then((res) => {
+    //     console.log(res)
+    //   })
+    //   .catch((err) => {
+    //     setError(err.message);
+    //   });
+    // console.log("[PaymentIntent]", payload.paymentIntent);
     }
   };
 
   const renderSuccess = () => {
     return (
       <div className="sr-field-success message">
-        <h1>Your test payment succeeded</h1>
-        <p>View PaymentIntent response:</p>
-        <pre className="sr-callout">
-          <code>{JSON.stringify(metadata, null, 2)}</code>
-        </pre>
+        <h1>Thanks for you purchase!</h1>
       </div>
     );
   };
@@ -128,7 +134,7 @@ const renderProduct = () => {
             minimumFractionDigits: 2,
           })}{" "}
         </h1>
-        <h4>Pre-order the Pasha package</h4>
+        <h4>Get your corgi pins!</h4>
 
         <div className="sr-combo-inputs">
           <div className="sr-combo-inputs-row">

@@ -26,13 +26,15 @@ product_list = [{
                 'id':'1',
                 'name':'Eclair', 
                 'price':'1000', 
-                'currency':'USD'
+                'currency':'EUR',
+                'img':'https://i.ibb.co/hZg1NZc/eclair-button.jpg'
                 },
                 {
                 'id':'2',
                 'name':'Beignet', 
                 'price':'800', 
-                'currency':'USD'
+                'currency':'USD',
+                'img':'https://i.ibb.co/DGXj74H/beignet-button.jpg'
                 },
             ]
 
@@ -76,12 +78,21 @@ def post_payment_intent():
     options.update(product)
     
     # Create a PaymentIntent with the order amount and currency
-    payment_intent = stripe.PaymentIntent.create(**options)
+    payment_intent = stripe.PaymentIntent.create(
+        **options,
+        metadata={'integration_check': 'accept_a_payment'},
+)
 
     try:
         return jsonify(payment_intent)
     except Exception as e:
         return jsonify(error=str(e)), 403
+
+@app.route('/update-payment-intent', methods=['POST'])
+def update-payment-intent():
+    #When other product is selected, update existing payment intent 
+    
+    pass
 
 @app.route('/purchases', methods=['POST'])
 def store_purchase():
@@ -91,8 +102,7 @@ def store_purchase():
 
 @app.route('/webhook', methods=['POST'])
 def webhook_received():
-    # You can use webhooks to receive information about asynchronous payment events.
-    # For more about our webhook events check out https://stripe.com/docs/webhooks.
+    # Use webhooks to receive information about asynchronous payment events.
     webhook_secret = os.getenv('STRIPE_WEBHOOK_SECRET')
     request_data = json.loads(request.data)
 
@@ -120,7 +130,6 @@ def webhook_received():
         print("💰 Payment received!")
 
     if event_type == 'payment_intent.payment_failed':
-        logger.error(data_object)
         #Notify the customer that their order was not fulfilled
         print("❌ Payment failed.")
 
