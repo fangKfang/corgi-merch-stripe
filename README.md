@@ -4,9 +4,7 @@ Corgi Merch site that accepts a payment for purchases of a corgi button using th
 
 ## Features
 
-Two product types are offered: Eclair button and Beignet button. Users can choose between the two products and then initiate a card payment. 
-
-This sample consists of a `client` in React and a `server` in Python.
+Two product types are offered: Eclair button and Beignet button. Users can choose between the two products and then initiate a card payment. This application incudes a `client` in React and a `server` in Python.
 
 ## How to run locally
 
@@ -16,14 +14,15 @@ You will need a Stripe account with its own set of [API keys](https://stripe.com
 
 Follow the steps below to run locally.
 
-**Installing and cloning manually**
-
-Clone the repository: 
+1. Clone the repository: 
 
 ```
 git clone https://github.com/fangKfang/corgi-merch-stripe.git
 ```
-You will need a Stripe account in order to run the application. Once you set up your account, go to the Stripe [developer dashboard](https://stripe.com/docs/development#api-keys) to find your API keys.
+
+2. You will need a Stripe account in order to run the application. Once you set up your account, go to the Stripe [developer dashboard](https://stripe.com/docs/development#api-keys) to find your API keys.
+
+3. Copy you API keys and update the .env in `./server` directory. 
 
 ```
 STRIPE_PUBLISHABLE_KEY=<replace-with-your-publishable-key>
@@ -31,9 +30,9 @@ STRIPE_SECRET_KEY=<replace-with-your-secret-key>
 ```
 ## Running the application
 
-Prerequeistes: 
+Prerequistes: 
 * Download Firefox: https://www.mozilla.org/en-US/firefox/new/
-* Download the CORS Everywhere extension: https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/. You will need this in order to manage requests between the API server and the React client. 
+* Download the CORS Everywhere extension: https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/. You will need this extension in order to manage requests between the API server and the React client. 
 * Install Python 3 
 * Install Pip 
 * Install Node 
@@ -53,6 +52,18 @@ Prerequeistes:
 
 ### Using the sample app
 
-1. Enter your name and card details
+1. Select the corgi button you want to purchase
+2. Enter your name and card details
+2. Hit "Pay"
 
 ## Use the Stripe CLI to test webhooks
+
+You can use the Stripe CLI to run a webhook locally. 
+
+First install the Stripe CLI and ensure your Stripe account is linked. Then enter the following in your console:
+```
+stripe listen -f 127.0.0.1:4242/webhook
+```
+The CLI will print a webhook secret key to the console. Set STRIPE_WEBHOOK_SECRET to this value in your .env file.
+
+You should see events logged in the console where the CLI is running. Additionally, every payload from `payment_intent.succeeded` webhook event will be logged to the `purchases.log` file. 
