@@ -38,13 +38,12 @@ Assuming you are using a Mac, install the following:
 
 * Download Firefox: https://www.mozilla.org/en-US/firefox/new/
 * Download the CORS Everywhere extension for Firefox: https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/. You will need this extension in order to manage requests between the API server and the React client. 
-
-Download [Homebrew](https://brew.sh/) or your favorite package manager to install the latest versions of: 
-* Python 3 
-* Pip 
-* Yarn
-* Node 
-* NPM 
+* Download [Homebrew](https://brew.sh/) or your favorite package manager to install the latest versions of: 
+- Python 3 
+- Pip 
+- Yarn
+- Node 
+- NPM 
 
 **Optional:**
 Install Stripe CLI by following the [installation steps](https://github.com/stripe/stripe-cli#installation). The Stripe CLI is needed for locally testing webhooks.
