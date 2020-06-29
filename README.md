@@ -42,7 +42,7 @@ Download [Homebrew](https://brew.sh/) or your favorite package manager to instal
 * Node 
 * NPM 
 
-**Optional**
+**Optional:**
 Install Stripe CLI: Follow the [installation steps](https://github.com/stripe/stripe-cli#installation). The CLI is needed for locally testing webhooks and Stripe integrations.
 
 ### Running the API server
@@ -57,9 +57,9 @@ Install Stripe CLI: Follow the [installation steps](https://github.com/stripe/st
 1. Go to `/client`
 3. Run `yarn`
 3. Run `yarn start` 
-4. Go to http://127.0.0.1:3000/ using Firefox to see your applicaiton. Ensure the CORS Everywehre extension is turned on. 
+4. Go to http://127.0.0.1:3000/ using Firefox to see your application. Ensure the CORS Everywehre extension is turned on. 
 
-### Using the sample app
+### Using the app
 
 1. Select the corgi button you want to purchase
 2. Enter your name and card details
@@ -69,10 +69,12 @@ Install Stripe CLI: Follow the [installation steps](https://github.com/stripe/st
 
 You can use the Stripe CLI to run a webhook locally. 
 
-First install the Stripe CLI and ensure your Stripe account is linked. Then enter the following in your console:
+First install the Stripe CLI and ensure your Stripe account is linked. 
+
+The CLI will print a webhook secret key to the console. Set STRIPE_WEBHOOK_SECRET to this value in your `.env` file.
+
+Then enter the following in your console:
 ```
 stripe listen -f 127.0.0.1:4242/webhook
 ```
-The CLI will print a webhook secret key to the console. Set STRIPE_WEBHOOK_SECRET to this value in your .env file.
-
-You should see events logged in the console where the CLI is running. Additionally, every payload from `payment_intent.succeeded` webhook event will be logged to the `purchases.log` file. 
+Use the applicaiton. You should see events logged in the console where the CLI is running. Additionally, every payload from `payment_intent.succeeded` webhook event will be logged to the `purchases.log` file. 
