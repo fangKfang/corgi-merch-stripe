@@ -15,7 +15,7 @@ export default function App() {
       <div className="sr-root">
         <div className="sr-main">
           <header className="sr-header">
-            <h1>Pastry Corgs for Sale</h1>
+            <h1>Corgi Pins for Sale</h1>
           </header>
           <Elements stripe={stripePromise}>
             <CheckoutForm />
