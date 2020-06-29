@@ -1,10 +1,14 @@
 # Stripe Payment Intent Integration: Corgi Merch 
 
-Corgi Merch site that accepts a payment for purchases of a corgi button using the [Payment Intents API](https://stripe.com/docs/payments/payment-intents), [Stripe Elements](https://stripe.com/payments/elements) and [React](https://reactjs.org/).
+Corgi Merch site that accepts one-time payments for purchases of a corgi button.
 
-## Features
+Forked from Stripe sample app here: https://github.com/stripe-samples/react-elements-card-payment
 
-Two product types are offered: Eclair button and Beignet button. Users can choose between the two products and then initiate a card payment. This application incudes a `client` in React and a `server` in Python.
+## App Features
+
+Two product types are offered: Eclair button and Beignet button. Users can choose between the two products and then initiate a card payment. 
+
+This application incudes a `client` in React and a `server` in Python.
 
 ## How to run locally
 
@@ -20,9 +24,9 @@ Follow the steps below to run locally.
 git clone https://github.com/fangKfang/corgi-merch-stripe.git
 ```
 
-2. You will need a Stripe account in order to run the application. Once you set up your account, go to the Stripe [developer dashboard](https://stripe.com/docs/development#api-keys) to find your API keys.
+2. You will need a Stripe account in order to run the application. Once you set up your account, go to the Stripe [developer dashboard](https://stripe.com/docs/development#api-keys) to find your API keys. 
 
-3. Copy you API keys and update the `.env` file in `./server` directory. 
+3. Copy the `.env.example` file into a file named `.env` into `./server` folder. Update your `.env` file with your Stripe API keys. 
 
 ```
 STRIPE_PUBLISHABLE_KEY=<replace-with-your-publishable-key>

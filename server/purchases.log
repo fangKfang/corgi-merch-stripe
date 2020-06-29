@@ -1,13 +1,11 @@
 werkzeug - INFO -  * Running on http://0.0.0.0:4242/ (Press CTRL+C to quit)
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:08] "OPTIONS /public-key HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:08] "GET /public-key HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:08] "OPTIONS /products HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:08] "GET /products HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:09] "OPTIONS /create-payment-intent HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:09] "POST /create-payment-intent HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:10] "POST /webhook HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:34] "OPTIONS /purchases HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:34] "POST /purchases HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 16:26:57] "OPTIONS /public-key HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 16:26:57] "GET /public-key HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 16:26:57] "OPTIONS /products HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 16:26:57] "GET /products HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 16:28:06] "OPTIONS /create-payment-intent HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 16:28:07] "POST /create-payment-intent HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 16:28:09] "POST /webhook HTTP/1.1" 200 -
 __main__ - ERROR - {
   "amount": 1000,
   "amount_capturable": 0,
@@ -25,7 +23,7 @@ __main__ - ERROR - {
         "application": null,
         "application_fee": null,
         "application_fee_amount": null,
-        "balance_transaction": "txn_1GylhNCdq7lM8xji5zcdbRt6",
+        "balance_transaction": "txn_1Gz9v6Cdq7lM8xjiGZbP4hdk",
         "billing_details": {
           "address": {
             "city": null,
@@ -41,8 +39,8 @@ __main__ - ERROR - {
         },
         "calculated_statement_descriptor": "Stripe",
         "captured": true,
-        "created": 1593293793,
-        "currency": "usd",
+        "created": 1593386900,
+        "currency": "eur",
         "customer": null,
         "description": null,
         "destination": null,
@@ -51,10 +49,12 @@ __main__ - ERROR - {
         "failure_code": null,
         "failure_message": null,
         "fraud_details": {},
-        "id": "ch_1GylhNCdq7lM8xjiyrhdDaJR",
+        "id": "ch_1Gz9v6Cdq7lM8xjiX3KZNSG5",
         "invoice": null,
         "livemode": false,
-        "metadata": {},
+        "metadata": {
+          "integration_check": "accept_a_payment"
+        },
         "object": "charge",
         "on_behalf_of": null,
         "order": null,
@@ -62,13 +62,13 @@ __main__ - ERROR - {
           "network_status": "approved_by_network",
           "reason": null,
           "risk_level": "normal",
-          "risk_score": 19,
+          "risk_score": 16,
           "seller_message": "Payment complete.",
           "type": "authorized"
         },
         "paid": true,
-        "payment_intent": "pi_1GylgzCdq7lM8xjiH03gafJ3",
-        "payment_method": "pm_1GylhMCdq7lM8xji2tN7l32c",
+        "payment_intent": "pi_1Gz9utCdq7lM8xjimczLmVtB",
+        "payment_method": "pm_1Gz9v6Cdq7lM8xjiGI9ByGsH",
         "payment_method_details": {
           "card": {
             "brand": "visa",
@@ -78,7 +78,7 @@ __main__ - ERROR - {
               "cvc_check": "pass"
             },
             "country": "US",
-            "exp_month": 12,
+            "exp_month": 4,
             "exp_year": 2021,
             "fingerprint": "7LQcQI8jaoraru4U",
             "funding": "credit",
@@ -92,7 +92,7 @@ __main__ - ERROR - {
         },
         "receipt_email": null,
         "receipt_number": null,
-        "receipt_url": "https://pay.stripe.com/receipts/acct_1GyUzVCdq7lM8xji/ch_1GylhNCdq7lM8xjiyrhdDaJR/rcpt_HXrQLqQVceZxdrubiUEx75UL31o6s4b",
+        "receipt_url": "https://pay.stripe.com/receipts/acct_1GyUzVCdq7lM8xji/ch_1Gz9v6Cdq7lM8xjiX3KZNSG5/rcpt_HYGS8aEf0Udokiw7Oa3Ko1TdODsXwwa",
         "refunded": false,
         "refunds": {},
         "review": null,
@@ -109,23 +109,25 @@ __main__ - ERROR - {
     "has_more": false,
     "object": "list",
     "total_count": 1,
-    "url": "/v1/charges?payment_intent=pi_1GylgzCdq7lM8xjiH03gafJ3"
+    "url": "/v1/charges?payment_intent=pi_1Gz9utCdq7lM8xjimczLmVtB"
   },
-  "client_secret": "pi_1GylgzCdq7lM8xjiH03gafJ3_secret_TMf1TcSzt1wd43MQdrYissn4k",
+  "client_secret": "pi_1Gz9utCdq7lM8xjimczLmVtB_secret_4j53xJCXAZetf6N9rkMF4azRJ",
   "confirmation_method": "automatic",
-  "created": 1593293769,
-  "currency": "usd",
+  "created": 1593386887,
+  "currency": "eur",
   "customer": null,
   "description": null,
-  "id": "pi_1GylgzCdq7lM8xjiH03gafJ3",
+  "id": "pi_1Gz9utCdq7lM8xjimczLmVtB",
   "invoice": null,
   "last_payment_error": null,
   "livemode": false,
-  "metadata": {},
+  "metadata": {
+    "integration_check": "accept_a_payment"
+  },
   "next_action": null,
   "object": "payment_intent",
   "on_behalf_of": null,
-  "payment_method": "pm_1GylhMCdq7lM8xji2tN7l32c",
+  "payment_method": "pm_1Gz9v6Cdq7lM8xjiGI9ByGsH",
   "payment_method_options": {
     "card": {
       "installments": null,
@@ -147,7 +149,9 @@ __main__ - ERROR - {
   "transfer_data": null,
   "transfer_group": null
 }
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:35] "POST /webhook HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:36:35] "POST /webhook HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:48:06] "POST /webhook HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [27/Jun/2020 14:49:25] "POST /webhook HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 16:28:25] "POST /webhook HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 16:28:26] "POST /webhook HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 17:27:42] "OPTIONS /public-key HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 17:27:42] "GET /public-key HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 17:27:43] "OPTIONS /products HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [28/Jun/2020 17:27:43] "GET /products HTTP/1.1" 200 -
