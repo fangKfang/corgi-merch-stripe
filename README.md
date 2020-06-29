@@ -22,7 +22,7 @@ git clone https://github.com/fangKfang/corgi-merch-stripe.git
 
 2. You will need a Stripe account in order to run the application. Once you set up your account, go to the Stripe [developer dashboard](https://stripe.com/docs/development#api-keys) to find your API keys.
 
-3. Copy you API keys and update the .env in `./server` directory. 
+3. Copy you API keys and update the `.env` file in `./server` directory. 
 
 ```
 STRIPE_PUBLISHABLE_KEY=<replace-with-your-publishable-key>
@@ -30,25 +30,34 @@ STRIPE_SECRET_KEY=<replace-with-your-secret-key>
 ```
 ## Running the application
 
-Prerequistes: 
+Assuming you are using a Mac, install the following:
+
 * Download Firefox: https://www.mozilla.org/en-US/firefox/new/
-* Download the CORS Everywhere extension: https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/. You will need this extension in order to manage requests between the API server and the React client. 
-* Install Python 3 
-* Install Pip 
-* Install Node 
-* Install NPM 
-* Install Stripe CLI: Follow the [installation steps](https://github.com/stripe/stripe-cli#installation). The CLI is needed for locally testing webhooks and Stripe integrations.
+* Download the CORS Everywhere extension for Firefox: https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/. You will need this extension in order to manage requests between the API server and the React client. 
+
+Download [Homebrew](https://brew.sh/) or your favorite package manager to install the latest versions of: 
+* Python 3 
+* Pip 
+* Yarn
+* Node 
+* NPM 
+
+**Optional**
+Install Stripe CLI: Follow the [installation steps](https://github.com/stripe/stripe-cli#installation). The CLI is needed for locally testing webhooks and Stripe integrations.
 
 ### Running the API server
 
 1. Go to `/server`
-2. `python server.py`f
+2. Run `python server.py`
+3. Go to http://127.0.0.1:4242/ to check that the server is running. 
+
 
 ### Running the React client
 
 1. Go to `/client`
 3. Run `yarn`
-3. Run `yarn start` and go to http://127.0.0.1:3000/ using Firefox. 
+3. Run `yarn start` 
+4. Go to http://127.0.0.1:3000/ using Firefox to see your applicaiton. Ensure the CORS Everywehre extension is turned on. 
 
 ### Using the sample app
 
