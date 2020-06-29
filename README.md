@@ -53,7 +53,7 @@ Install Stripe CLI by following the [installation steps](https://github.com/stri
 1. Go to `/server`
 2. Install all required libraries using `pip install -r requirements.txt`
 2. Run `python server.py`
-3. Go to http://127.0.0.1:4242/ to check that the server is running. 
+3. Go to http://127.0.0.1:4242/ using Firefox to check that the server is running. 
 
 
 ### Running the React client
