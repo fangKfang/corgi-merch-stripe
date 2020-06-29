@@ -10,7 +10,7 @@ Two product types are offered: Eclair button and Beignet button. Users can choos
 
 This application incudes a `client` in React and a `server` in Python.
 
-<img src="./corgi-merch.png" alt="Preview of Corgi Merch" align="center" height="50%">
+<img src="./corgi-merch.png" alt="Preview of Corgi Merch" align="center" style="width:45%;">
 
 ## How to run locally
 
