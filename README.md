@@ -43,7 +43,7 @@ Download [Homebrew](https://brew.sh/) or your favorite package manager to instal
 * NPM 
 
 **Optional:**
-Install Stripe CLI by follow the [installation steps](https://github.com/stripe/stripe-cli#installation). The Stripe CLI is needed for locally testing webhooks.
+Install Stripe CLI by following the [installation steps](https://github.com/stripe/stripe-cli#installation). The Stripe CLI is needed for locally testing webhooks.
 
 ### Running the API server
 
